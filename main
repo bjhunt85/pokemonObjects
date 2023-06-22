@@ -1,0 +1,27 @@
+class Pokemon:
+    def __init__(self, name, hp, attack, defence, spAtk, spDef, speed):
+        self.name = name
+        self.hp = hp
+        self.attack = attack
+        self.defence = defence
+        self.spAtk = spAtk
+        self.spDef = spDef
+        self.speed = speed
+    def __str__(self):
+        return f"{self.name} health = {self.hp}" 
+
+bulbasaur = Pokemon("bulbasaur", 45, 49, 49, 65, 65, 45)
+charmander = Pokemon("charmander", 39, 52, 43, 60, 50, 65)
+squirtle = Pokemon("squirtle", 44, 48, 65, 50, 64, 43)
+
+def fight(attacker, defender):
+    print(defender)
+    if attacker.attack - defender.defence > 0:
+        defender.hp -= (attacker.attack - defender.defence)
+    else:
+        defender.hp -= 1
+    print(defender)
+    menu()
+
+def menu():
+    choice = input("")
